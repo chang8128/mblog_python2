@@ -34,7 +34,7 @@ def showpost(request, slug):
 	try:
 	    post = Post.objects.get(slug=slug)
 	    if post != None:
-	        html = remplate.render(locals())
+	        html = template.render(locals())
 	        return HttpResponse(html)
 	except:
 	    return redirect('/')
